@@ -1,0 +1,7 @@
+Pillow
+Flask
+pickleshare
+Flask-WTF
+WTForms
+pymongo
+Frozen-Flask

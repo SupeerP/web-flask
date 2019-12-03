@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+{% block content %}
+    <!-- To do add and delete with user register -->
+    
+    <div class="md-form mt-0">
+        {% if login %}
+            <form action="" method="post">
+                <fieldset>
+                    <legend class="border-bottom mb-4">Add Movie</legend>
+                        <div class="form-group">
+                            <input type="text" class="form-control mb-2" placeholder="Title Movie" name="title">
+                            <input type="text" class="form-control mb-2" placeholder="Year" name="year">
+                            <input type="text" class="form-control mb-3" placeholder="Imdb Ref" name="imdb">
+                            <input type="hidden" name="action" value="add">
+                            <input type="submit" class="btn btn-outline-info" value="Add">
+                        </div>
+                </fieldset>
+            </form>
+
+            <form action="" method="post">
+                <fieldset>
+                    <legend class="border-bottom mb-4">Delete Movie</legend>
+                        <div class="form-group">
+                            <input type="text" class="form-control mb-3" placeholder="Title Movie" name="title">
+                            <input type="hidden" name="action" value="delete">
+                            <input type="submit" class="btn btn-outline-info" value="Delete">
+                        </div>
+                </fieldset>
+            </form>
+
+            <form action="" method="post">
+                <fieldset>
+                    <legend class="border-bottom mb-4">Modify Movie</legend>
+                        <div class="form-group">
+                            <input type="text" class="form-control mb-2" placeholder="Title Movie to Edit" name="title">
+                            <input type="text" class="form-control mb-2" placeholder="New Title" name="n_title">
+                            <input type="text" class="form-control mb-2" placeholder="Year" name="n_year">
+                            <input type="text" class="form-control mb-3" placeholder="Imdb Ref" name="n_imdb">
+                            <input type="hidden" name="action" value="modify">
+                            <input type="submit" class="btn btn-outline-info" value="Modify">
+                        </div>
+                </fieldset>
+            </form>
+
+        {% endif %}
+    </div>
+    <div class="md-form mt-0">
+        <h2 class="border-bottom mb-4">Movies</h2>
+        <input class="form-control mb-4" id="search" type="text" placeholder="Search" onkeyup="searchMovie()">
+        
+        <ul class ="list-group" id="movie-list">
+        {% for movie in movies %}
+            <li class="list-group-item"><a class="mr-2" href="https://www.imdb.com/title/{{ movie['imdb'] }}">{{ movie['title'] }}</a>
+                    <small class="text-muted">{{ movie['year'] }}</small>
+            </li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endblock content %}
