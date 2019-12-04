@@ -33,3 +33,11 @@ docker-compose exec mongo /bin/bash
 mongorestore --drop dump
 ```
 Tras esto podremos verlo tal cual como se muestra en la captura anterior.
+
+## Trabajo Futuro
+
+Actualmente la web estaba destinada para su presentación en las prácticas de la asignatura. Tras acabar el curso me gustaría volver a retomar este proyecto y hacerlo funcional: 
+- Eliminando el uso de pickleshare para las sesiones de usuario
+- Añadir la posibilidad de escribir nuevas publicaciones en la página web inicial
+- Configurar el sidebar con enlaces funcionales
+- Y muchas mas cosas...
